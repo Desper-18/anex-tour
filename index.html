@@ -1,0 +1,1837 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="fonts/millanova/stylesheet.css">
+  <link rel="stylesheet" href="fonts/roboto/stylesheet.css">
+  <link rel="stylesheet" href="fonts/rasfire/stylesheet.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md bg-white position-sticky top-0 z-3 position-relative">
+    <div class="container ">
+      <a class="navbar-brand" href="/">
+        <img src="images/logo-anex.svg" alt="brand logo">
+      </a>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-md-0 text-uppercase text-nowrap">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Подбор тура</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Горящие туры</a>
+          </li>
+          <li class="nav-item d-none d-lg-block">
+            <a class="nav-link" href="#">Страны</a>
+          </li>
+          <li class="nav-item d-none d-lg-block">
+            <a class="nav-link" href="#"> отели</a>
+          </li>
+        </ul>
+        <div class="d-flex">
+          <button class="btn btn-outline-dark text-uppercase text-nowrap" id="callMe">оставить заявку</button>
+          <button class="btn ms-lg-4">
+            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M23.8008 19.8575C23.8008 20.2475 23.7141 20.6483 23.53 21.0383C23.3458 21.4283 23.1075 21.7967 22.7933 22.1433C22.2625 22.7283 21.6775 23.1508 21.0166 23.4217C20.3666 23.6925 19.6625 23.8333 18.9041 23.8333C17.7991 23.8333 16.6183 23.5733 15.3725 23.0425C14.1266 22.5117 12.8808 21.7967 11.6458 20.8975C10.4 19.9875 9.21913 18.98 8.09246 17.8642C6.97663 16.7375 5.96913 15.5567 5.06996 14.3217C4.18163 13.0867 3.46663 11.8517 2.94663 10.6275C2.42663 9.39249 2.16663 8.21166 2.16663 7.08499C2.16663 6.34832 2.29663 5.64416 2.55663 4.99416C2.81663 4.33332 3.22829 3.72666 3.80246 3.18499C4.49579 2.50249 5.25413 2.16666 6.05579 2.16666C6.35913 2.16666 6.66246 2.23166 6.93329 2.36166C7.21496 2.49166 7.46413 2.68666 7.65913 2.96832L10.1725 6.51082C10.3675 6.78166 10.5083 7.03082 10.6058 7.26916C10.7033 7.49666 10.7575 7.72416 10.7575 7.92999C10.7575 8.18999 10.6816 8.44999 10.53 8.69916C10.3891 8.94832 10.1833 9.20832 9.92329 9.46832L9.09996 10.3242C8.98079 10.4433 8.92663 10.5842 8.92663 10.7575C8.92663 10.8442 8.93746 10.92 8.95913 11.0067C8.99163 11.0933 9.02413 11.1583 9.04579 11.2233C9.24079 11.5808 9.57663 12.0467 10.0533 12.61C10.5408 13.1733 11.0608 13.7475 11.6241 14.3217C12.2091 14.8958 12.7725 15.4267 13.3466 15.9142C13.91 16.3908 14.3758 16.7158 14.7441 16.9108C14.7983 16.9325 14.8633 16.965 14.9391 16.9975C15.0258 17.03 15.1125 17.0408 15.21 17.0408C15.3941 17.0408 15.535 16.9758 15.6541 16.8567L16.4775 16.0442C16.7483 15.7733 17.0083 15.5675 17.2575 15.4375C17.5066 15.2858 17.7558 15.21 18.0266 15.21C18.2325 15.21 18.4491 15.2533 18.6875 15.3508C18.9258 15.4483 19.175 15.5892 19.4458 15.7733L23.0316 18.3192C23.3133 18.5142 23.5083 18.7417 23.6275 19.0125C23.7358 19.2833 23.8008 19.5542 23.8008 19.8575Z"
+                stroke="#1C1C1C" stroke-width="1.5" stroke-miterlimit="10" />
+            </svg>
+          </button>
+          <button class="btn">
+            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M13 14.5492C14.8667 14.5492 16.38 13.0359 16.38 11.1692C16.38 9.30243 14.8667 7.78915 13 7.78915C11.1333 7.78915 9.62 9.30243 9.62 11.1692C9.62 13.0359 11.1333 14.5492 13 14.5492Z"
+                stroke="#1C1C1C" stroke-width="1.5" />
+              <path
+                d="M3.92168 9.19749C6.05584 -0.184174 19.955 -0.173341 22.0783 9.20833C23.3242 14.7117 19.9008 19.37 16.9 22.2517C14.7225 24.3533 11.2775 24.3533 9.08918 22.2517C6.09918 19.37 2.67584 14.7008 3.92168 9.19749Z"
+                stroke="#1C1C1C" stroke-width="1.5" />
+            </svg>
+          </button>
+          <div class="vr mx-xl-2" style="color: #e3e3e3;"></div>
+          <button class="btn" data-id="navbar-toggler">
+            <svg width="43" height="17" viewBox="0 0 43 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1H42" stroke="black" stroke-linecap="round" />
+              <path d="M1 8.5H42" stroke="black" stroke-linecap="round" />
+              <path d="M1 16.5H42" stroke="black" stroke-linecap="round" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="d-md-none">
+        <button class="btn" data-id="navbar-toggler">
+          <svg width="43" height="17" viewBox="0 0 43 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1H42" stroke="black" stroke-linecap="round" />
+            <path d="M1 8.5H42" stroke="black" stroke-linecap="round" />
+            <path d="M1 16.5H42" stroke="black" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+      <div class="d-none navbar-menu" id="navbarMenu">
+        <div class="row">
+          <div class="col">
+            <h2 class="text-uppercase">популярные страны</h2>
+            <ul class="list-unstyled mb-0">
+              <li><a href="">Турция</a></li>
+              <li><a href="">Египет</a></li>
+              <li><a href="">Мальдивы</a></li>
+              <li><a href="">ОАЭ</a></li>
+              <li><a href="">Куба</a></li>
+              <li><a href="">Шри-Ланка</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h2 class="text-uppercase">туристам</h2>
+            <ul class="list-unstyled mb-0">
+              <li><a href="">Страны</a></li>
+              <li><a href="">Отели</a></li>
+              <li><a href="">Подбор тура</a></li>
+              <li><a href="">Горящие туры</a></li>
+              <li><a href="">Как купить и оплатить тур</a></li>
+            </ul>
+
+          </div>
+          <div class="col">
+            <h2 class="text-uppercase">компания</h2>
+            <ul class="list-unstyled mb-0">
+              <li><a href="">Страны</a></li>
+              <li><a href="">Отели</a></li>
+              <li><a href="">Подбор тура</a></li>
+              <li><a href="">Горящие туры</a></li>
+              <li><a href="">Как купить и оплатить тур</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <!-- Hero section -->
+    <section class="hero-section text-uppercase text-center text-white">
+      <div class="container-lg">
+        <div class="row align-items-center min-vh-100">
+          <div class="col-12">
+            <h1 class="main-title">путешествия мечты</h1>
+            <p class="main-subtitle">выбери свою</p>
+            <svg width="16" height="88" viewBox="0 0 16 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M8.5 1C8.5 0.723858 8.27614 0.5 8 0.5C7.72386 0.5 7.5 0.723858 7.5 1H8.5ZM8 77.3333C6.52724 77.3333 5.33333 78.5272 5.33333 80C5.33333 81.4728 6.52724 82.6667 8 82.6667C9.47276 82.6667 10.6667 81.4728 10.6667 80C10.6667 78.5272 9.47276 77.3333 8 77.3333ZM7.5 1L7.5 80H8.5L8.5 1H7.5Z"
+                fill="white" />
+              <circle cx="8" cy="80" r="7.5" stroke="white" />
+            </svg>
+          </div>
+          <form class="col-12 row bg-white p-2 rounded-pill text-start text-body-tertiary align-items-center bg-white">
+            <div class="col col-md-4 col-lg-auto">
+              <div class="form-floating flex-grow-1">
+                <select class="form-select border-0 bg-transparent" id="floatingSelect"
+                  aria-label="Floating label select example">
+                  <option selected>Москва</option>
+                  <option value="1">Дубай</option>
+                  <option value="2">Стамбул</option>
+                  <option value="3">Бали</option>
+                </select>
+                <label for="floatingSelect">Откуда</label>
+              </div>
+            </div>
+            <div class="vr bg-black"></div>
+            <div class="col col-md-4 col-lg-auto">
+              <div class="form-floating flex-grow-1">
+                <input type="text" class="form-control border-0" placeholder="куда" id="floatingTextarea"></input>
+                <label for="floatingTextarea">куда</label>
+              </div>
+            </div>
+            <div class="vr bg-black"></div>
+            <div class="col col-md-4 col-lg-auto">
+              <div class="form-floating flex-grow-1">
+                <input type="text" class="form-control border-0" placeholder="куда" id="floatingTextarea"></input>
+                <label for="floatingTextarea">вылет</label>
+              </div>
+            </div>
+            <div class="vr bg-black"></div>
+            <div class="col col-md-6 col-lg-auto">
+              <div class="form-floating flex-grow-1 ">
+                <select class="form-select border-0" id="floatingSelect" aria-label="Floating label select example">
+                  <option selected>9 - 12 ночей</option>
+                </select>
+                <label for="floatingSelect">На сколько</label>
+              </div>
+            </div>
+            <div class="vr bg-black"></div>
+            <div class="col col-md-6 col-lg-auto">
+              <div class="form-floating flex-grow-1 ">
+                <select class="form-select border-0" id="floatingSelect" aria-label="Floating label select example">
+                  <option selected>2 + 0</option>
+                </select>
+                <label for="floatingSelect">Туристы</label>
+              </div>
+            </div>
+            <div class="col-12 col-lg-auto">
+              <button type="submit"
+                class="btn btn-primary text-bg-danger text-uppercase d-inline-flex align-items-center gap-2 my-btn-padding-x">
+                подобрать
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.999978 1.17849L11.9998 11.8215" stroke="white" stroke-width="1.5"
+                    stroke-linecap="round" />
+                  <path d="M3.75 11.8214L12 11.8214" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                  <path d="M12 11.8214L12 4.23685" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- горящие туры section -->
+    <section class="section-padding">
+      <div class="container-lg position-relative">
+        <div class="text-uppercase">
+          <h2 class="section-title" id="hot_tours">горящие туры</h2>
+          <p class="section-subtitle">Поймайте момент</p>
+        </div>
+        <div class="position-relative">
+          <div class="photo-card-controls">
+            <button class="btn icon-btn rounded-circle photo-card-prev" data-action="prev">
+              <svg xmlns="http://www.w3.org/2000/svg" class="pe-none" width="32" height="32" fill="currentColor"
+                class="bi bi-arrow-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
+              </svg>
+            </button>
+            <button class="btn icon-btn rounded-circle photo-card-next" data-action="next">
+              <svg xmlns="http://www.w3.org/2000/svg" class="pe-none" width="32" height="32" fill="currentColor"
+                class="bi bi-arrow-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="d-flex gap-4.5 photo-card-container my-scrollbar">
+            <div class="photo-card">
+              <img src="images/destinations/venecia.jpg" class="photo-card-img" alt="">
+              <div class="card-overlay d-flex flex-column">
+                <div class="chips mb-auto">
+                  <div class="chip">9 дней</div>
+                  <div class="chip">от 25 000 ₽</div>
+                </div>
+                <div>
+                  <div class="destination">
+                    Италия <span class="scale-1.2">&bull;</span> Венеция
+                  </div>
+                  <div class="when">12-18 октября</div>
+                  <a href="" class="link-white text-decoration-none">
+                    узнать подробнее
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <img src="images/destinations/kappadokia.jpg" class="photo-card-img" alt="">
+              <div class="card-overlay d-flex flex-column">
+                <div class="chips mb-auto">
+                  <div class="chip">9 дней</div>
+                  <div class="chip">от 25 000 ₽</div>
+                </div>
+                <div>
+                  <div class="destination">
+                    Италия <span class="scale-1.2">&bull;</span> Венеция
+                  </div>
+                  <div class="when">12-18 октября</div>
+                  <a href="" class="link-white text-decoration-none">
+                    узнать подробнее
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <img src="images/destinations/venecia.jpg" class="photo-card-img" alt="">
+              <div class="card-overlay d-flex flex-column">
+                <div class="chips mb-auto">
+                  <div class="chip">9 дней</div>
+                  <div class="chip">от 25 000 ₽</div>
+                </div>
+                <div>
+                  <div class="destination">
+                    Италия <span class="scale-1.2">&bull;</span> Венеция
+                  </div>
+                  <div class="when">12-18 октября</div>
+                  <a href="" class="link-white text-decoration-none">
+                    узнать подробнее
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <img src="images/destinations/venecia.jpg" class="photo-card-img" alt="">
+              <div class="card-overlay d-flex flex-column">
+                <div class="chips mb-auto">
+                  <div class="chip">9 дней</div>
+                  <div class="chip">от 25 000 ₽</div>
+                </div>
+                <div>
+                  <div class="destination">
+                    Италия <span class="scale-1.2">&bull;</span> Венеция
+                  </div>
+                  <div class="when">12-18 октября</div>
+                  <a href="" class="link-white text-decoration-none">
+                    узнать подробнее
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <img src="images/destinations/venecia.jpg" class="photo-card-img" alt="">
+              <div class="card-overlay d-flex flex-column">
+                <div class="chips mb-auto">
+                  <div class="chip">9 дней</div>
+                  <div class="chip">от 25 000 ₽</div>
+                </div>
+                <div>
+                  <div class="destination">
+                    Италия <span class="scale-1.2">&bull;</span> Венеция
+                  </div>
+                  <div class="when">12-18 октября</div>
+                  <a href="" class="link-white text-decoration-none">
+                    узнать подробнее
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <img src="images/destinations/venecia.jpg" class="photo-card-img" alt="">
+              <div class="card-overlay d-flex flex-column">
+                <div class="chips mb-auto">
+                  <div class="chip">9 дней</div>
+                  <div class="chip">от 25 000 ₽</div>
+                </div>
+                <div>
+                  <div class="destination">
+                    Италия <span class="scale-1.2">&bull;</span> Венеция
+                  </div>
+                  <div class="when">12-18 октября</div>
+                  <a href="" class="link-white text-decoration-none">
+                    узнать подробнее
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <img src="images/destinations/venecia.jpg" class="photo-card-img" alt="">
+              <div class="card-overlay d-flex flex-column">
+                <div class="chips mb-auto">
+                  <div class="chip">9 дней</div>
+                  <div class="chip">от 25 000 ₽</div>
+                </div>
+                <div>
+                  <div class="destination">
+                    Италия <span class="scale-1.2">&bull;</span> Венеция
+                  </div>
+                  <div class="when">12-18 октября</div>
+                  <a href="" class="link-white text-decoration-none">
+                    узнать подробнее
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <img src="images/destinations/venecia.jpg" class="photo-card-img" alt="">
+              <div class="card-overlay d-flex flex-column">
+                <div class="chips mb-auto">
+                  <div class="chip">9 дней</div>
+                  <div class="chip">от 25 000 ₽</div>
+                </div>
+                <div>
+                  <div class="destination">
+                    Италия <span class="scale-1.2">&bull;</span> Венеция
+                  </div>
+                  <div class="when">12-18 октября</div>
+                  <a href="" class="link-white text-decoration-none">
+                    узнать подробнее
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <img src="images/destinations/venecia.jpg" class="photo-card-img" alt="">
+              <div class="card-overlay d-flex flex-column">
+                <div class="chips mb-auto">
+                  <div class="chip">9 дней</div>
+                  <div class="chip">от 25 000 ₽</div>
+                </div>
+                <div>
+                  <div class="destination">
+                    Италия <span class="scale-1.2">&bull;</span> Венеция
+                  </div>
+                  <div class="when">12-18 октября</div>
+                  <a href="" class="link-white text-decoration-none">
+                    узнать подробнее
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <img src="images/destinations/venecia.jpg" class="photo-card-img" alt="">
+              <div class="card-overlay d-flex flex-column">
+                <div class="chips mb-auto">
+                  <div class="chip">9 дней</div>
+                  <div class="chip">от 25 000 ₽</div>
+                </div>
+                <div>
+                  <div class="destination">
+                    Италия <span class="scale-1.2">&bull;</span> Венеция
+                  </div>
+                  <div class="when">12-18 октября</div>
+                  <a href="" class="link-white text-decoration-none">
+                    узнать подробнее
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <img src="images/destinations/venecia.jpg" class="photo-card-img" alt="">
+              <div class="card-overlay d-flex flex-column">
+                <div class="chips mb-auto">
+                  <div class="chip">9 дней</div>
+                  <div class="chip">от 25 000 ₽</div>
+                </div>
+                <div>
+                  <div class="destination">
+                    Италия <span class="scale-1.2">&bull;</span> Венеция
+                  </div>
+                  <div class="when">12-18 октября</div>
+                  <a href="" class="link-white text-decoration-none">
+                    узнать подробнее
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <img src="images/destinations/venecia.jpg" class="photo-card-img" alt="">
+              <div class="card-overlay d-flex flex-column">
+                <div class="chips mb-auto">
+                  <div class="chip">9 дней</div>
+                  <div class="chip">от 25 000 ₽</div>
+                </div>
+                <div>
+                  <div class="destination">
+                    Италия <span class="scale-1.2">&bull;</span> Венеция
+                  </div>
+                  <div class="when">12-18 октября</div>
+                  <a href="" class="link-white text-decoration-none">
+                    узнать подробнее
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <img src="images/destinations/venecia.jpg" class="photo-card-img" alt="">
+              <div class="card-overlay d-flex flex-column">
+                <div class="chips mb-auto">
+                  <div class="chip">9 дней</div>
+                  <div class="chip">от 25 000 ₽</div>
+                </div>
+                <div>
+                  <div class="destination">
+                    Италия <span class="scale-1.2">&bull;</span> Венеция
+                  </div>
+                  <div class="when">12-18 октября</div>
+                  <a href="" class="link-white text-decoration-none">
+                    узнать подробнее
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <img src="images/destinations/venecia.jpg" class="photo-card-img" alt="">
+              <div class="card-overlay d-flex flex-column">
+                <div class="chips mb-auto">
+                  <div class="chip">9 дней</div>
+                  <div class="chip">от 25 000 ₽</div>
+                </div>
+                <div>
+                  <div class="destination">
+                    Италия <span class="scale-1.2">&bull;</span> Венеция
+                  </div>
+                  <div class="when">12-18 октября</div>
+                  <a href="" class="link-white text-decoration-none">
+                    узнать подробнее
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <img src="images/destinations/venecia.jpg" class="photo-card-img" alt="">
+              <div class="card-overlay d-flex flex-column">
+                <div class="chips mb-auto">
+                  <div class="chip">9 дней</div>
+                  <div class="chip">от 25 000 ₽</div>
+                </div>
+                <div>
+                  <div class="destination">
+                    Италия <span class="scale-1.2">&bull;</span> Венеция
+                  </div>
+                  <div class="when">12-18 октября</div>
+                  <a href="" class="link-white text-decoration-none">
+                    узнать подробнее
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <img src="images/destinations/venecia.jpg" class="photo-card-img" alt="">
+              <div class="card-overlay d-flex flex-column">
+                <div class="chips mb-auto">
+                  <div class="chip">9 дней</div>
+                  <div class="chip">от 25 000 ₽</div>
+                </div>
+                <div>
+                  <div class="destination">
+                    Италия <span class="scale-1.2">&bull;</span> Венеция
+                  </div>
+                  <div class="when">12-18 октября</div>
+                  <a href="" class="link-white text-decoration-none">
+                    узнать подробнее
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <img src="images/destinations/venecia.jpg" class="photo-card-img" alt="">
+              <div class="card-overlay d-flex flex-column">
+                <div class="chips mb-auto">
+                  <div class="chip">9 дней</div>
+                  <div class="chip">от 25 000 ₽</div>
+                </div>
+                <div>
+                  <div class="destination">
+                    Италия <span class="scale-1.2">&bull;</span> Венеция
+                  </div>
+                  <div class="when">12-18 октября</div>
+                  <a href="" class="link-white text-decoration-none">
+                    узнать подробнее
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <img src="images/destinations/venecia.jpg" class="photo-card-img" alt="">
+              <div class="card-overlay d-flex flex-column">
+                <div class="chips mb-auto">
+                  <div class="chip">9 дней</div>
+                  <div class="chip">от 25 000 ₽</div>
+                </div>
+                <div>
+                  <div class="destination">
+                    Италия <span class="scale-1.2">&bull;</span> Венеция
+                  </div>
+                  <div class="when">12-18 октября</div>
+                  <a href="" class="link-white text-decoration-none">
+                    узнать подробнее
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <img src="images/destinations/venecia.jpg" class="photo-card-img" alt="">
+              <div class="card-overlay d-flex flex-column">
+                <div class="chips mb-auto">
+                  <div class="chip">9 дней</div>
+                  <div class="chip">от 25 000 ₽</div>
+                </div>
+                <div>
+                  <div class="destination">
+                    Италия <span class="scale-1.2">&bull;</span> Венеция
+                  </div>
+                  <div class="when">12-18 октября</div>
+                  <a href="" class="link-white text-decoration-none">
+                    узнать подробнее
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <img src="images/destinations/venecia.jpg" class="photo-card-img" alt="">
+              <div class="card-overlay d-flex flex-column">
+                <div class="chips mb-auto">
+                  <div class="chip">9 дней</div>
+                  <div class="chip">от 25 000 ₽</div>
+                </div>
+                <div>
+                  <div class="destination">
+                    Италия <span class="scale-1.2">&bull;</span> Венеция
+                  </div>
+                  <div class="when">12-18 октября</div>
+                  <a href="" class="link-white text-decoration-none">
+                    узнать подробнее
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <img src="images/destinations/venecia.jpg" class="photo-card-img" alt="">
+              <div class="card-overlay d-flex flex-column">
+                <div class="chips mb-auto">
+                  <div class="chip">9 дней</div>
+                  <div class="chip">от 25 000 ₽</div>
+                </div>
+                <div>
+                  <div class="destination">
+                    Италия <span class="scale-1.2">&bull;</span> Венеция
+                  </div>
+                  <div class="when">12-18 октября</div>
+                  <a href="" class="link-white text-decoration-none">
+                    узнать подробнее
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <img src="images/destinations/venecia.jpg" class="photo-card-img" alt="">
+              <div class="card-overlay d-flex flex-column">
+                <div class="chips mb-auto">
+                  <div class="chip">9 дней</div>
+                  <div class="chip">от 25 000 ₽</div>
+                </div>
+                <div>
+                  <div class="destination">
+                    Италия <span class="scale-1.2">&bull;</span> Венеция
+                  </div>
+                  <div class="when">12-18 октября</div>
+                  <a href="" class="link-white text-decoration-none">
+                    узнать подробнее
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <img src="images/destinations/venecia.jpg" class="photo-card-img" alt="">
+              <div class="card-overlay d-flex flex-column">
+                <div class="chips mb-auto">
+                  <div class="chip">9 дней</div>
+                  <div class="chip">от 25 000 ₽</div>
+                </div>
+                <div>
+                  <div class="destination">
+                    Италия <span class="scale-1.2">&bull;</span> Венеция
+                  </div>
+                  <div class="when">12-18 октября</div>
+                  <a href="" class="link-white text-decoration-none">
+                    узнать подробнее
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <img src="images/destinations/venecia.jpg" class="photo-card-img" alt="">
+              <div class="card-overlay d-flex flex-column">
+                <div class="chips mb-auto">
+                  <div class="chip">9 дней</div>
+                  <div class="chip">от 25 000 ₽</div>
+                </div>
+                <div>
+                  <div class="destination">
+                    Италия <span class="scale-1.2">&bull;</span> Венеция
+                  </div>
+                  <div class="when">12-18 октября</div>
+                  <a href="" class="link-white text-decoration-none">
+                    узнать подробнее
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <img src="images/destinations/venecia.jpg" class="photo-card-img" alt="">
+              <div class="card-overlay d-flex flex-column">
+                <div class="chips mb-auto">
+                  <div class="chip">9 дней</div>
+                  <div class="chip">от 25 000 ₽</div>
+                </div>
+                <div>
+                  <div class="destination">
+                    Италия <span class="scale-1.2">&bull;</span> Венеция
+                  </div>
+                  <div class="when">12-18 октября</div>
+                  <a href="" class="link-white text-decoration-none">
+                    узнать подробнее
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <img src="images/destinations/venecia.jpg" class="photo-card-img" alt="">
+              <div class="card-overlay d-flex flex-column">
+                <div class="chips mb-auto">
+                  <div class="chip">9 дней</div>
+                  <div class="chip">от 25 000 ₽</div>
+                </div>
+                <div>
+                  <div class="destination">
+                    Италия <span class="scale-1.2">&bull;</span> Венеция
+                  </div>
+                  <div class="when">12-18 октября</div>
+                  <a href="" class="link-white text-decoration-none">
+                    узнать подробнее
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <img src="images/destinations/venecia.jpg" class="photo-card-img" alt="">
+              <div class="card-overlay d-flex flex-column">
+                <div class="chips mb-auto">
+                  <div class="chip">9 дней</div>
+                  <div class="chip">от 25 000 ₽</div>
+                </div>
+                <div>
+                  <div class="destination">
+                    Италия <span class="scale-1.2">&bull;</span> Венеция
+                  </div>
+                  <div class="when">12-18 октября</div>
+                  <a href="" class="link-white text-decoration-none">
+                    узнать подробнее
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <img src="images/destinations/venecia.jpg" class="photo-card-img" alt="">
+              <div class="card-overlay d-flex flex-column">
+                <div class="chips mb-auto">
+                  <div class="chip">9 дней</div>
+                  <div class="chip">от 25 000 ₽</div>
+                </div>
+                <div>
+                  <div class="destination">
+                    Италия <span class="scale-1.2">&bull;</span> Венеция
+                  </div>
+                  <div class="when">12-18 октября</div>
+                  <a href="" class="link-white text-decoration-none">
+                    узнать подробнее
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <img src="images/destinations/venecia.jpg" class="photo-card-img" alt="">
+              <div class="card-overlay d-flex flex-column">
+                <div class="chips mb-auto">
+                  <div class="chip">9 дней</div>
+                  <div class="chip">от 25 000 ₽</div>
+                </div>
+                <div>
+                  <div class="destination">
+                    Италия <span class="scale-1.2">&bull;</span> Венеция
+                  </div>
+                  <div class="when">12-18 октября</div>
+                  <a href="" class="link-white text-decoration-none">
+                    узнать подробнее
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <img src="images/destinations/venecia.jpg" class="photo-card-img" alt="">
+              <div class="card-overlay d-flex flex-column">
+                <div class="chips mb-auto">
+                  <div class="chip">9 дней</div>
+                  <div class="chip">от 25 000 ₽</div>
+                </div>
+                <div>
+                  <div class="destination">
+                    Италия <span class="scale-1.2">&bull;</span> Венеция
+                  </div>
+                  <div class="when">12-18 октября</div>
+                  <a href="" class="link-white text-decoration-none">
+                    узнать подробнее
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <img src="images/destinations/venecia.jpg" class="photo-card-img" alt="">
+              <div class="card-overlay d-flex flex-column">
+                <div class="chips mb-auto">
+                  <div class="chip">9 дней</div>
+                  <div class="chip">от 25 000 ₽</div>
+                </div>
+                <div>
+                  <div class="destination">
+                    Италия <span class="scale-1.2">&bull;</span> Венеция
+                  </div>
+                  <div class="when">12-18 октября</div>
+                  <a href="" class="link-white text-decoration-none">
+                    узнать подробнее
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <img src="images/destinations/venecia.jpg" class="photo-card-img" alt="">
+              <div class="card-overlay d-flex flex-column">
+                <div class="chips mb-auto">
+                  <div class="chip">9 дней</div>
+                  <div class="chip">от 25 000 ₽</div>
+                </div>
+                <div>
+                  <div class="destination">
+                    Италия <span class="scale-1.2">&bull;</span> Венеция
+                  </div>
+                  <div class="when">12-18 октября</div>
+                  <a href="" class="link-white text-decoration-none">
+                    узнать подробнее
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- популярные отели section -->
+    <section class="section-padding bg-light">
+      <div class="container-fluid px-0">
+        <div class="text-uppercase text-center">
+          <h2 class="section-title" id="popular_hotels">популярные отели</h2>
+          <p class="section-subtitle">уют и роскошь в лучших отелях мира</p>
+        </div>
+        <div class="w-100 d-flex align-items-center overflow-x-scroll gap-4.5 my-scrollbar hotel-card-container">
+          <div class="hotel-card edge">
+            <img src="images/destinations/venecia.jpg" class="hotel-card-img" alt="">
+            <div class="card-overlay d-flex flex-column">
+              <div class="chips mb-auto">
+                <div class="chip">9 дней</div>
+                <div class="chip">от 25 000 ₽</div>
+              </div>
+              <div>
+                <div class="destination">
+                  Италия <span class="scale-1.2">&bull;</span> Венеция
+                </div>
+                <div class="when">12-18 октября</div>
+                <a href="" class="link-white text-decoration-none">
+                  узнать подробнее
+                  <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                    <path
+                      d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                      fill="white" />
+                    <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="hotel-card lateral">
+            <img src="images/destinations/venecia.jpg" class="hotel-card-img" alt="">
+            <div class="card-overlay d-flex flex-column">
+              <div class="chips mb-auto">
+                <div class="chip">9 дней</div>
+                <div class="chip">от 25 000 ₽</div>
+              </div>
+              <div>
+                <div class="destination">
+                  Италия <span class="scale-1.2">&bull;</span> Венеция
+                </div>
+                <div class="when">12-18 октября</div>
+                <a href="" class="link-white text-decoration-none">
+                  узнать подробнее
+                  <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                    <path
+                      d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                      fill="white" />
+                    <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="hotel-card middle">
+            <img src="images/destinations/venecia.jpg" class="hotel-card-img" alt="">
+            <div class="card-overlay d-flex flex-column">
+              <div class="chips mb-auto">
+                <div class="chip">9 дней</div>
+                <div class="chip">от 25 000 ₽</div>
+              </div>
+              <div>
+                <div class="destination">
+                  Италия <span class="scale-1.2">&bull;</span> Венеция
+                </div>
+                <div class="when">12-18 октября</div>
+                <a href="" class="link-white text-decoration-none">
+                  узнать подробнее
+                  <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                    <path
+                      d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                      fill="white" />
+                    <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="hotel-card lateral">
+            <img src="images/destinations/venecia.jpg" class="hotel-card-img" alt="">
+            <div class="card-overlay d-flex flex-column">
+              <div class="chips mb-auto">
+                <div class="chip">9 дней</div>
+                <div class="chip">от 25 000 ₽</div>
+              </div>
+              <div>
+                <div class="destination">
+                  Италия <span class="scale-1.2">&bull;</span> Венеция
+                </div>
+                <div class="when">12-18 октября</div>
+                <a href="" class="link-white text-decoration-none">
+                  узнать подробнее
+                  <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                    <path
+                      d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                      fill="white" />
+                    <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="hotel-card edge">
+            <img src="images/destinations/venecia.jpg" class="hotel-card-img" alt="">
+            <div class="card-overlay d-flex flex-column">
+              <div class="chips mb-auto">
+                <div class="chip">9 дней</div>
+                <div class="chip">от 25 000 ₽</div>
+              </div>
+              <div>
+                <div class="destination">
+                  Италия <span class="scale-1.2">&bull;</span> Венеция
+                </div>
+                <div class="when">12-18 октября</div>
+                <a href="" class="link-white text-decoration-none">
+                  узнать подробнее
+                  <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                    <path
+                      d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                      fill="white" />
+                    <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- CTA (Call To Action) section -->
+    <section class="cta-section d-flex align-items-end">
+      <div class="container mb-4">
+        <div class="bg-white rounded cta-container">
+          <div class="row align-items-center">
+            <div class="col-md-4">
+              <h3 class="text-uppercase fw-normal cta-title">не определились <span class="fst-italic">с
+                  выбором?</span>
+              </h3>
+            </div>
+            <div class="col-md-4">
+              <p class="cta-subtitle">
+                Оставьте свой номер
+                и наш специалист поможет
+                вам с подбором тура
+              </p>
+            </div>
+            <form class="col-md-4 row align-items-center">
+              <div class="col-md-6">
+                <div class="form-floating mb-3">
+                  <input type="email"
+                    class="form-control border-2 border-top-0 border-start-0 border-end-0 rounded-0 border-bottom"
+                    id="floatingInput" placeholder="name@example.com">
+                  <label for="floatingInput">Имя</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="password"
+                    class="form-control border-2 border-top-0 border-start-0 border-end-0 rounded-0 border-bottom"
+                    id="floatingPassword" placeholder="Пароль">
+                  <label for="floatingPassword">Телефон</label>
+                </div>
+              </div>
+              <div class="col-md-6 d-grid d-md-block">
+                <button type="submit"
+                  class="btn btn-primary text-bg-danger d-inline-flex align-items-center justify-content-center gap-2">
+                  Отправить
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+                    <path d="M0.999978 1.17849L11.9998 11.8215" stroke="white" stroke-width="1.5"
+                      stroke-linecap="round" />
+                    <path d="M3.75 11.8215L12 11.8215" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M12 11.8215L12 4.23698" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Reviews section -->
+    <section class="section-padding">
+      <div class="container-lg">
+        <div class="text-uppercase text-center">
+          <h2 class="section-title" id="reviews">отзывы</h2>
+          <p class="section-subtitle">Впечатления наших путешественников</p>
+        </div>
+        <div class="card-container d-flex gap-4.5 overflow-x-scroll my-scrollbar">
+          <div class="card flex-shrink-0 bg-gray justify-content-center">
+            <div class="user-avatar text-center mx-auto">
+              <img src="./images/avatars/user1.png" class="img-fluid object-fit-cover" alt="">
+            </div>
+            <div class="stars text-center mb-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="134" height="22" viewBox="0 0 134 22" fill="none">
+                <path
+                  d="M22 8.49987L14.0061 7.97432L10.9956 0.411133L7.9851 7.97432L0 8.49987L6.12451 13.7002L4.11477 21.5888L10.9956 17.2395L17.8765 21.5888L15.8668 13.7002L22 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M50 8.49987L42.0061 7.97432L38.9956 0.411133L35.9851 7.97432L28 8.49987L34.1245 13.7002L32.1148 21.5888L38.9956 17.2395L45.8765 21.5888L43.8668 13.7002L50 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M78 8.49987L70.0061 7.97432L66.9956 0.411133L63.9851 7.97432L56 8.49987L62.1245 13.7002L60.1148 21.5888L66.9956 17.2395L73.8765 21.5888L71.8668 13.7002L78 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M106 8.49987L98.0061 7.97432L94.9956 0.411133L91.9851 7.97432L84 8.49987L90.1245 13.7002L88.1148 21.5888L94.9956 17.2395L101.877 21.5888L99.8668 13.7002L106 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M134 8.49987L126.006 7.97432L122.996 0.411133L119.985 7.97432L112 8.49987L118.125 13.7002L116.115 21.5888L122.996 17.2395L129.877 21.5888L127.867 13.7002L134 8.49987Z"
+                  fill="#EC1C24" />
+              </svg>
+            </div>
+            <div class="user-name text-uppercase mb-1">
+              Мария С. из Москвы
+            </div>
+            <div class="user-action">
+              Летала в Париж 20.07.23 в отель Ritz-Carlton
+            </div>
+            <div class="user-feedback">
+              Невероятное путешествие! <br>
+              Спасибо за организацию моей поездки в Париж. Все было просто идеально - от отелей до экскурсий. Не могу
+              дождаться
+              следующего приключения с вашей турфирмой!
+            </div>
+          </div>
+          <div class="card flex-shrink-0 bg-gray justify-content-center">
+            <div class="user-avatar text-center mx-auto">
+              <img src="./images/avatars/user1.png" class="img-fluid object-fit-cover" alt="">
+            </div>
+            <div class="stars text-center mb-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="134" height="22" viewBox="0 0 134 22" fill="none">
+                <path
+                  d="M22 8.49987L14.0061 7.97432L10.9956 0.411133L7.9851 7.97432L0 8.49987L6.12451 13.7002L4.11477 21.5888L10.9956 17.2395L17.8765 21.5888L15.8668 13.7002L22 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M50 8.49987L42.0061 7.97432L38.9956 0.411133L35.9851 7.97432L28 8.49987L34.1245 13.7002L32.1148 21.5888L38.9956 17.2395L45.8765 21.5888L43.8668 13.7002L50 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M78 8.49987L70.0061 7.97432L66.9956 0.411133L63.9851 7.97432L56 8.49987L62.1245 13.7002L60.1148 21.5888L66.9956 17.2395L73.8765 21.5888L71.8668 13.7002L78 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M106 8.49987L98.0061 7.97432L94.9956 0.411133L91.9851 7.97432L84 8.49987L90.1245 13.7002L88.1148 21.5888L94.9956 17.2395L101.877 21.5888L99.8668 13.7002L106 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M134 8.49987L126.006 7.97432L122.996 0.411133L119.985 7.97432L112 8.49987L118.125 13.7002L116.115 21.5888L122.996 17.2395L129.877 21.5888L127.867 13.7002L134 8.49987Z"
+                  fill="#EC1C24" />
+              </svg>
+            </div>
+            <div class="user-name text-uppercase mb-1">
+              Мария С. из Москвы
+            </div>
+            <div class="user-action">
+              Летала в Париж 20.07.23 в отель Ritz-Carlton
+            </div>
+            <div class="user-feedback">
+              Невероятное путешествие! <br>
+              Спасибо за организацию моей поездки в Париж. Все было просто идеально - от отелей до экскурсий. Не могу
+              дождаться
+              следующего приключения с вашей турфирмой!
+            </div>
+          </div>
+          <div class="card flex-shrink-0 bg-gray justify-content-center">
+            <div class="user-avatar text-center mx-auto">
+              <img src="./images/avatars/user1.png" class="img-fluid object-fit-cover" alt="">
+            </div>
+            <div class="stars text-center mb-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="134" height="22" viewBox="0 0 134 22" fill="none">
+                <path
+                  d="M22 8.49987L14.0061 7.97432L10.9956 0.411133L7.9851 7.97432L0 8.49987L6.12451 13.7002L4.11477 21.5888L10.9956 17.2395L17.8765 21.5888L15.8668 13.7002L22 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M50 8.49987L42.0061 7.97432L38.9956 0.411133L35.9851 7.97432L28 8.49987L34.1245 13.7002L32.1148 21.5888L38.9956 17.2395L45.8765 21.5888L43.8668 13.7002L50 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M78 8.49987L70.0061 7.97432L66.9956 0.411133L63.9851 7.97432L56 8.49987L62.1245 13.7002L60.1148 21.5888L66.9956 17.2395L73.8765 21.5888L71.8668 13.7002L78 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M106 8.49987L98.0061 7.97432L94.9956 0.411133L91.9851 7.97432L84 8.49987L90.1245 13.7002L88.1148 21.5888L94.9956 17.2395L101.877 21.5888L99.8668 13.7002L106 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M134 8.49987L126.006 7.97432L122.996 0.411133L119.985 7.97432L112 8.49987L118.125 13.7002L116.115 21.5888L122.996 17.2395L129.877 21.5888L127.867 13.7002L134 8.49987Z"
+                  fill="#EC1C24" />
+              </svg>
+            </div>
+            <div class="user-name text-uppercase mb-1">
+              Мария С. из Москвы
+            </div>
+            <div class="user-action">
+              Летала в Париж 20.07.23 в отель Ritz-Carlton
+            </div>
+            <div class="user-feedback">
+              Невероятное путешествие! <br>
+              Спасибо за организацию моей поездки в Париж. Все было просто идеально - от отелей до экскурсий. Не могу
+              дождаться
+              следующего приключения с вашей турфирмой!
+            </div>
+          </div>
+          <div class="card flex-shrink-0 bg-gray justify-content-center">
+            <div class="user-avatar text-center mx-auto">
+              <img src="./images/avatars/user1.png" class="img-fluid object-fit-cover" alt="">
+            </div>
+            <div class="stars text-center mb-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="134" height="22" viewBox="0 0 134 22" fill="none">
+                <path
+                  d="M22 8.49987L14.0061 7.97432L10.9956 0.411133L7.9851 7.97432L0 8.49987L6.12451 13.7002L4.11477 21.5888L10.9956 17.2395L17.8765 21.5888L15.8668 13.7002L22 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M50 8.49987L42.0061 7.97432L38.9956 0.411133L35.9851 7.97432L28 8.49987L34.1245 13.7002L32.1148 21.5888L38.9956 17.2395L45.8765 21.5888L43.8668 13.7002L50 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M78 8.49987L70.0061 7.97432L66.9956 0.411133L63.9851 7.97432L56 8.49987L62.1245 13.7002L60.1148 21.5888L66.9956 17.2395L73.8765 21.5888L71.8668 13.7002L78 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M106 8.49987L98.0061 7.97432L94.9956 0.411133L91.9851 7.97432L84 8.49987L90.1245 13.7002L88.1148 21.5888L94.9956 17.2395L101.877 21.5888L99.8668 13.7002L106 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M134 8.49987L126.006 7.97432L122.996 0.411133L119.985 7.97432L112 8.49987L118.125 13.7002L116.115 21.5888L122.996 17.2395L129.877 21.5888L127.867 13.7002L134 8.49987Z"
+                  fill="#EC1C24" />
+              </svg>
+            </div>
+            <div class="user-name text-uppercase mb-1">
+              Мария С. из Москвы
+            </div>
+            <div class="user-action">
+              Летала в Париж 20.07.23 в отель Ritz-Carlton
+            </div>
+            <div class="user-feedback">
+              Невероятное путешествие! <br>
+              Спасибо за организацию моей поездки в Париж. Все было просто идеально - от отелей до экскурсий. Не могу
+              дождаться
+              следующего приключения с вашей турфирмой!
+            </div>
+          </div>
+          <div class="card flex-shrink-0 bg-gray justify-content-center">
+            <div class="user-avatar text-center mx-auto">
+              <img src="./images/avatars/user1.png" class="img-fluid object-fit-cover" alt="">
+            </div>
+            <div class="stars text-center mb-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="134" height="22" viewBox="0 0 134 22" fill="none">
+                <path
+                  d="M22 8.49987L14.0061 7.97432L10.9956 0.411133L7.9851 7.97432L0 8.49987L6.12451 13.7002L4.11477 21.5888L10.9956 17.2395L17.8765 21.5888L15.8668 13.7002L22 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M50 8.49987L42.0061 7.97432L38.9956 0.411133L35.9851 7.97432L28 8.49987L34.1245 13.7002L32.1148 21.5888L38.9956 17.2395L45.8765 21.5888L43.8668 13.7002L50 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M78 8.49987L70.0061 7.97432L66.9956 0.411133L63.9851 7.97432L56 8.49987L62.1245 13.7002L60.1148 21.5888L66.9956 17.2395L73.8765 21.5888L71.8668 13.7002L78 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M106 8.49987L98.0061 7.97432L94.9956 0.411133L91.9851 7.97432L84 8.49987L90.1245 13.7002L88.1148 21.5888L94.9956 17.2395L101.877 21.5888L99.8668 13.7002L106 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M134 8.49987L126.006 7.97432L122.996 0.411133L119.985 7.97432L112 8.49987L118.125 13.7002L116.115 21.5888L122.996 17.2395L129.877 21.5888L127.867 13.7002L134 8.49987Z"
+                  fill="#EC1C24" />
+              </svg>
+            </div>
+            <div class="user-name text-uppercase mb-1">
+              Мария С. из Москвы
+            </div>
+            <div class="user-action">
+              Летала в Париж 20.07.23 в отель Ritz-Carlton
+            </div>
+            <div class="user-feedback">
+              Невероятное путешествие! <br>
+              Спасибо за организацию моей поездки в Париж. Все было просто идеально - от отелей до экскурсий. Не могу
+              дождаться
+              следующего приключения с вашей турфирмой!
+            </div>
+          </div>
+          <div class="card flex-shrink-0 bg-gray justify-content-center">
+            <div class="user-avatar text-center mx-auto">
+              <img src="./images/avatars/user1.png" class="img-fluid object-fit-cover" alt="">
+            </div>
+            <div class="stars text-center mb-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="134" height="22" viewBox="0 0 134 22" fill="none">
+                <path
+                  d="M22 8.49987L14.0061 7.97432L10.9956 0.411133L7.9851 7.97432L0 8.49987L6.12451 13.7002L4.11477 21.5888L10.9956 17.2395L17.8765 21.5888L15.8668 13.7002L22 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M50 8.49987L42.0061 7.97432L38.9956 0.411133L35.9851 7.97432L28 8.49987L34.1245 13.7002L32.1148 21.5888L38.9956 17.2395L45.8765 21.5888L43.8668 13.7002L50 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M78 8.49987L70.0061 7.97432L66.9956 0.411133L63.9851 7.97432L56 8.49987L62.1245 13.7002L60.1148 21.5888L66.9956 17.2395L73.8765 21.5888L71.8668 13.7002L78 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M106 8.49987L98.0061 7.97432L94.9956 0.411133L91.9851 7.97432L84 8.49987L90.1245 13.7002L88.1148 21.5888L94.9956 17.2395L101.877 21.5888L99.8668 13.7002L106 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M134 8.49987L126.006 7.97432L122.996 0.411133L119.985 7.97432L112 8.49987L118.125 13.7002L116.115 21.5888L122.996 17.2395L129.877 21.5888L127.867 13.7002L134 8.49987Z"
+                  fill="#EC1C24" />
+              </svg>
+            </div>
+            <div class="user-name text-uppercase mb-1">
+              Мария С. из Москвы
+            </div>
+            <div class="user-action">
+              Летала в Париж 20.07.23 в отель Ritz-Carlton
+            </div>
+            <div class="user-feedback">
+              Невероятное путешествие! <br>
+              Спасибо за организацию моей поездки в Париж. Все было просто идеально - от отелей до экскурсий. Не могу
+              дождаться
+              следующего приключения с вашей турфирмой!
+            </div>
+          </div>
+          <div class="card flex-shrink-0 bg-gray justify-content-center">
+            <div class="user-avatar text-center mx-auto">
+              <img src="./images/avatars/user1.png" class="img-fluid object-fit-cover" alt="">
+            </div>
+            <div class="stars text-center mb-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="134" height="22" viewBox="0 0 134 22" fill="none">
+                <path
+                  d="M22 8.49987L14.0061 7.97432L10.9956 0.411133L7.9851 7.97432L0 8.49987L6.12451 13.7002L4.11477 21.5888L10.9956 17.2395L17.8765 21.5888L15.8668 13.7002L22 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M50 8.49987L42.0061 7.97432L38.9956 0.411133L35.9851 7.97432L28 8.49987L34.1245 13.7002L32.1148 21.5888L38.9956 17.2395L45.8765 21.5888L43.8668 13.7002L50 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M78 8.49987L70.0061 7.97432L66.9956 0.411133L63.9851 7.97432L56 8.49987L62.1245 13.7002L60.1148 21.5888L66.9956 17.2395L73.8765 21.5888L71.8668 13.7002L78 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M106 8.49987L98.0061 7.97432L94.9956 0.411133L91.9851 7.97432L84 8.49987L90.1245 13.7002L88.1148 21.5888L94.9956 17.2395L101.877 21.5888L99.8668 13.7002L106 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M134 8.49987L126.006 7.97432L122.996 0.411133L119.985 7.97432L112 8.49987L118.125 13.7002L116.115 21.5888L122.996 17.2395L129.877 21.5888L127.867 13.7002L134 8.49987Z"
+                  fill="#EC1C24" />
+              </svg>
+            </div>
+            <div class="user-name text-uppercase mb-1">
+              Мария С. из Москвы
+            </div>
+            <div class="user-action">
+              Летала в Париж 20.07.23 в отель Ritz-Carlton
+            </div>
+            <div class="user-feedback">
+              Невероятное путешествие! <br>
+              Спасибо за организацию моей поездки в Париж. Все было просто идеально - от отелей до экскурсий. Не могу
+              дождаться
+              следующего приключения с вашей турфирмой!
+            </div>
+          </div>
+          <div class="card flex-shrink-0 bg-gray justify-content-center">
+            <div class="user-avatar text-center mx-auto">
+              <img src="./images/avatars/user1.png" class="img-fluid object-fit-cover" alt="">
+            </div>
+            <div class="stars text-center mb-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="134" height="22" viewBox="0 0 134 22" fill="none">
+                <path
+                  d="M22 8.49987L14.0061 7.97432L10.9956 0.411133L7.9851 7.97432L0 8.49987L6.12451 13.7002L4.11477 21.5888L10.9956 17.2395L17.8765 21.5888L15.8668 13.7002L22 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M50 8.49987L42.0061 7.97432L38.9956 0.411133L35.9851 7.97432L28 8.49987L34.1245 13.7002L32.1148 21.5888L38.9956 17.2395L45.8765 21.5888L43.8668 13.7002L50 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M78 8.49987L70.0061 7.97432L66.9956 0.411133L63.9851 7.97432L56 8.49987L62.1245 13.7002L60.1148 21.5888L66.9956 17.2395L73.8765 21.5888L71.8668 13.7002L78 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M106 8.49987L98.0061 7.97432L94.9956 0.411133L91.9851 7.97432L84 8.49987L90.1245 13.7002L88.1148 21.5888L94.9956 17.2395L101.877 21.5888L99.8668 13.7002L106 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M134 8.49987L126.006 7.97432L122.996 0.411133L119.985 7.97432L112 8.49987L118.125 13.7002L116.115 21.5888L122.996 17.2395L129.877 21.5888L127.867 13.7002L134 8.49987Z"
+                  fill="#EC1C24" />
+              </svg>
+            </div>
+            <div class="user-name text-uppercase mb-1">
+              Мария С. из Москвы
+            </div>
+            <div class="user-action">
+              Летала в Париж 20.07.23 в отель Ritz-Carlton
+            </div>
+            <div class="user-feedback">
+              Невероятное путешествие! <br>
+              Спасибо за организацию моей поездки в Париж. Все было просто идеально - от отелей до экскурсий. Не могу
+              дождаться
+              следующего приключения с вашей турфирмой!
+            </div>
+          </div>
+          <div class="card flex-shrink-0 bg-gray justify-content-center">
+            <div class="user-avatar text-center mx-auto">
+              <img src="./images/avatars/user1.png" class="img-fluid object-fit-cover" alt="">
+            </div>
+            <div class="stars text-center mb-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="134" height="22" viewBox="0 0 134 22" fill="none">
+                <path
+                  d="M22 8.49987L14.0061 7.97432L10.9956 0.411133L7.9851 7.97432L0 8.49987L6.12451 13.7002L4.11477 21.5888L10.9956 17.2395L17.8765 21.5888L15.8668 13.7002L22 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M50 8.49987L42.0061 7.97432L38.9956 0.411133L35.9851 7.97432L28 8.49987L34.1245 13.7002L32.1148 21.5888L38.9956 17.2395L45.8765 21.5888L43.8668 13.7002L50 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M78 8.49987L70.0061 7.97432L66.9956 0.411133L63.9851 7.97432L56 8.49987L62.1245 13.7002L60.1148 21.5888L66.9956 17.2395L73.8765 21.5888L71.8668 13.7002L78 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M106 8.49987L98.0061 7.97432L94.9956 0.411133L91.9851 7.97432L84 8.49987L90.1245 13.7002L88.1148 21.5888L94.9956 17.2395L101.877 21.5888L99.8668 13.7002L106 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M134 8.49987L126.006 7.97432L122.996 0.411133L119.985 7.97432L112 8.49987L118.125 13.7002L116.115 21.5888L122.996 17.2395L129.877 21.5888L127.867 13.7002L134 8.49987Z"
+                  fill="#EC1C24" />
+              </svg>
+            </div>
+            <div class="user-name text-uppercase mb-1">
+              Мария С. из Москвы
+            </div>
+            <div class="user-action">
+              Летала в Париж 20.07.23 в отель Ritz-Carlton
+            </div>
+            <div class="user-feedback">
+              Невероятное путешествие! <br>
+              Спасибо за организацию моей поездки в Париж. Все было просто идеально - от отелей до экскурсий. Не могу
+              дождаться
+              следующего приключения с вашей турфирмой!
+            </div>
+          </div>
+          <div class="card flex-shrink-0 bg-gray justify-content-center">
+            <div class="user-avatar text-center mx-auto">
+              <img src="./images/avatars/user1.png" class="img-fluid object-fit-cover" alt="">
+            </div>
+            <div class="stars text-center mb-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="134" height="22" viewBox="0 0 134 22" fill="none">
+                <path
+                  d="M22 8.49987L14.0061 7.97432L10.9956 0.411133L7.9851 7.97432L0 8.49987L6.12451 13.7002L4.11477 21.5888L10.9956 17.2395L17.8765 21.5888L15.8668 13.7002L22 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M50 8.49987L42.0061 7.97432L38.9956 0.411133L35.9851 7.97432L28 8.49987L34.1245 13.7002L32.1148 21.5888L38.9956 17.2395L45.8765 21.5888L43.8668 13.7002L50 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M78 8.49987L70.0061 7.97432L66.9956 0.411133L63.9851 7.97432L56 8.49987L62.1245 13.7002L60.1148 21.5888L66.9956 17.2395L73.8765 21.5888L71.8668 13.7002L78 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M106 8.49987L98.0061 7.97432L94.9956 0.411133L91.9851 7.97432L84 8.49987L90.1245 13.7002L88.1148 21.5888L94.9956 17.2395L101.877 21.5888L99.8668 13.7002L106 8.49987Z"
+                  fill="#EC1C24" />
+                <path
+                  d="M134 8.49987L126.006 7.97432L122.996 0.411133L119.985 7.97432L112 8.49987L118.125 13.7002L116.115 21.5888L122.996 17.2395L129.877 21.5888L127.867 13.7002L134 8.49987Z"
+                  fill="#EC1C24" />
+              </svg>
+            </div>
+            <div class="user-name text-uppercase mb-1">
+              Мария С. из Москвы
+            </div>
+            <div class="user-action">
+              Летала в Париж 20.07.23 в отель Ritz-Carlton
+            </div>
+            <div class="user-feedback">
+              Невероятное путешествие! <br>
+              Спасибо за организацию моей поездки в Париж. Все было просто идеально - от отелей до экскурсий. Не могу
+              дождаться
+              следующего приключения с вашей турфирмой!
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- News section -->
+    <section class="section-padding bg-gray">
+      <div class="container-lg">
+        <div class="text-uppercase">
+          <h2 class="section-title" id="news">новости</h2>
+          <p class="section-subtitle">события в мире туризма</p>
+        </div>
+        <div class="row g-4 news-card-container">
+          <div class="d-none d-md-block col-md-8 order-md-first order-lg-0 col-lg-6">
+            <div class="news-card h-100">
+              <img src="images/news/kids-lying-on-the-bed.png" class="news-card-img" alt="">
+              <div class="card-overlay half-width d-flex flex-column justify-content-center">
+                <div>
+                  <h3 class="news-card-title text-uppercase">отдых с детьми: о чем нужно помнить в путешествии</h3>
+                  <a href="" class="link-white text-decoration-none">
+                    читать
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-none d-md-block col-md-4 order-md-n2 order-lg-0 col-lg-3">
+            <div class="news-card h-100">
+              <div class="ratio ratio-1x1">
+                <img src="images/news/uae.jpg" class="news-card-img" alt="">
+              </div>
+              <div class="card-overlay d-flex flex-column justify-content-end">
+                <div>
+                  <h3 class="news-card-title text-uppercase">ТОП-10 уникальных и завораживающих мест в ОАЭ</h3>
+                  <a href="" class="link-white text-decoration-none">
+                    читать
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-none d-md-block col-md-4 order-md-n1 order-lg-0 col-lg-3">
+            <div class="news-card h-100">
+              <div class="ratio ratio-1x1">
+                <img src="images/news/sky.jpg" class="news-card-img" alt="">
+              </div>
+              <div class="card-overlay d-flex flex-column justify-content-end">
+                <div>
+                  <h3 class="news-card-title text-uppercase">Отдых, близкий к природе и экологии</h3>
+                  <a href="" class="link-white text-decoration-none">
+                    читать
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 order-md-first order-lg-0 d-lg-none">
+            <div class="news-card h-100">
+              <div class="ratio ratio-1x1">
+                <img src="images/news/lg-hidden.jpg" class="news-card-img" alt="">
+              </div>
+              <div class="card-overlay d-flex flex-column justify-content-end">
+                <div>
+                  <h3 class="news-card-title text-uppercase">ТОП-10 уникальных и завораживающих мест в ОАЭ</h3>
+                  <a href="" class="link-white text-decoration-none">
+                    читать
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 order-md-first order-lg-0 col-lg-3">
+            <div class="news-card h-100">
+              <div class="ratio ratio-1x1 h-100">
+                <img src="images/news/treasure.jpg" class="news-card-img" alt="">
+              </div>
+              <div class="card-overlay d-flex flex-column justify-content-end">
+                <div>
+                  <h3 class="news-card-title text-uppercase">богатство культурных и исторических сокровищ разных стран
+                  </h3>
+                  <a href="" class="link-white text-decoration-none news-card-link">
+                    читать
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-none d-md-block col-md-8 order-md-last order-lg-0 col-lg-6">
+            <div class="news-card h-100">
+              <img src="images/news/unforgettable.jpg" class="news-card-img" alt="">
+              <div class="card-overlay almost-half-width d-flex flex-column justify-content-center ms-auto">
+                <div>
+                  <h3 class="news-card-title text-uppercase">
+                    Как сделать путешествие незабываемым для всех
+                  </h3>
+                  <a href="" class="link-white text-decoration-none news-card-link">
+                    читать
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-3 order-md-n2 order-lg-0">
+            <div class="news-card h-100">
+              <div class="ratio ratio-1x1 h-100">
+                <img src="images/news/smth.jpg" class="news-card-img" alt="">
+              </div>
+              <div class="card-overlay d-flex flex-column justify-content-end">
+                <div>
+                  <h3 class="news-card-title text-uppercase">
+                    путешествия, которые приведут вас в мир высот, глубин и скорости
+                  </h3>
+                  <a href="" class="link-white text-decoration-none news-card-link">
+                    читать
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="16" viewBox="0 0 42 16" fill="none">
+                      <path
+                        d="M1 7.5C0.723858 7.5 0.5 7.72386 0.5 8C0.5 8.27614 0.723858 8.5 1 8.5L1 7.5ZM31.3333 8C31.3333 9.47276 32.5272 10.6667 34 10.6667C35.4728 10.6667 36.6667 9.47276 36.6667 8C36.6667 6.52724 35.4728 5.33334 34 5.33334C32.5272 5.33334 31.3333 6.52724 31.3333 8ZM1 8.5L34 8.5L34 7.5L1 7.5L1 8.5Z"
+                        fill="white" />
+                      <circle cx="34" cy="8" r="7.5" transform="rotate(-90 34 8)" stroke="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="my-4 text-center">
+          <button class="btn btn-outline-dark d-md-none">Больше новостей</button>
+        </div>
+      </div>
+    </section>
+    <!-- About us section -->
+    <section class="section-padding" id="about_us_section">
+      <div class="container-lg">
+        <div class="text-uppercase text-center">
+          <h2 class="section-title" id="about_us">О нас</h2>
+          <p class="section-subtitle">Вдохновляем мир на путешествия</p>
+        </div>
+        <div class="row fw-light">
+          <div class="col-md-8 col-lg-6 " id="about_us_text">
+            — команда профессионалов, влюбленных в искусство путешествий. Наша история началась с мечты о том, чтобы
+            сделать
+            каждое путешествие незабываемым, каждое приключение уникальным.
+            <p class="mt-3">
+
+              Наша миссия — сделать путешествия доступными и незабываемыми. Мы предлагаем вам не просто туры, а
+              волшебные
+              истории,
+              которые будут жить в вашем сердце навсегда. Независимо от того, ищете ли вы релакс на пляже, культурные
+              изыски или
+              экстремальные приключения, мы создадим для вас оптимальное путешествие, подстроенное под ваши уникальные
+              желания.
+            </p>
+          </div>
+          <div class="col-md-4 col-lg-6 mb-5">
+            <img src="images/about-us-images/girl.png" style="border-radius: 30px;" class="w-100" alt="">
+          </div>
+          <div class="col-md-4 order-last order-md-0 lift-top">
+            <img src="images/about-us-images/pool.png" style="border-radius: 30px;" class="w-100" alt="">
+          </div>
+          <div class="col-md-4">
+            Мы гордимся нашей командой опытных специалистов, каждый из которых разделяет страсть к туризму и
+            стремление
+            сделать ваше
+            путешествие незабываемым. Мы внимательно следим за последними тенденциями в индустрии, чтобы предложить
+            вам
+            только
+            лучшие и самые актуальные варианты.
+          </div>
+          <div class="col-md-4">
+            Присоединяйтесь к нам в этом захватывающем путешествии! Мы готовы подарить вам моменты радости,
+            вдохновения
+            и удивления
+            в каждом уголке нашего удивительного мира.
+          </div>
+        </div>
+        <div class="row border border-1 border-start-0 border-end-0 py-4.8 mt-4 mt-lg-0">
+          <div class="col-md-4 pb-4 pb-md-0 d-flex flex-column align-items-center position-relative" id="left-contact">
+            <h3 class="text-center text-uppercase subsection-title mb-3">СВЯЗАТЬСЯ С НАМИ</h3>
+            <div class="row justify-content-center d-inline-flex gy-3">
+              <div class="col-4 col-md-auto text-center"><a href=""><img src="./images/socials/facebook.svg" alt=""></a>
+              </div>
+              <div class="col-4 col-md-auto text-center"><a href=""><img src="./images/socials/instagram.svg"
+                    alt=""></a></div>
+              <div class="col-4 col-md-auto text-center"><a href=""><img src="./images/socials/telegram.svg" alt=""></a>
+              </div>
+              <div class="col-4 col-md-auto text-center"><a href=""><img src="./images/socials/whatsapp.svg" alt=""></a>
+              </div>
+              <div class="col-4 col-md-auto text-center"><a href=""><img src="./images/socials/ok.svg" alt=""></a>
+              </div>
+              <div class="col-4 col-md-auto text-center"><a href=""><img src="./images/socials/vk.svg" alt=""></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 py-4 py-md-0">
+            <h3 class="text-center text-uppercase subsection-title">Контакты</h3>
+            <div class="d-flex flex-column align-items-center text-uppercase fw-light">
+              <a href="tel:+84956262696" class="link-dark text-decoration-none">+ 8 (495) 626-26-96</a>
+              <a href="tel:+849258262696" class="link-dark text-decoration-none">+ 8 (925) 826-26-96</a>
+              <a href="mailto:anextourchertanovo@gmail.com" class="link-dark">anextourchertanovo@gmail.com</a>
+            </div>
+          </div>
+          <div class="col-md-4 pt-4 pt-md-0 position-relative" id="right-contact">
+            <h3 class="text-center text-uppercase subsection-title">АДРЕС</h3>
+            <div class="d-flex flex-column align-items-center text-uppercase text-center fw-light">
+              <p>Москва, Россошанский проезд, <br> дом 3, (1‑й этаж)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Scroll to top -->
+  <button class="btn icon-btn rounded-circle scroll-to-top d-none">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up"
+      viewBox="0 0 16 16">
+      <path fill-rule="evenodd"
+        d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5" />
+    </svg>
+  </button>
+  <!-- Modalka "Ostavit zayavku" -->
+  <div class="modal-bg d-none">
+    <div class="modal-window">
+      <button class="modal-close-btn" onclick="closeModal()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+          <path
+            d="M13 0C5.82864 0 0 5.82864 0 13C0 20.1714 5.82864 26 13 26C20.1714 26 26 20.1714 26 13C26 5.82864 20.1714 0 13 0ZM13 24.6878C6.56103 24.6878 1.31221 19.439 1.31221 13C1.31221 6.56103 6.56103 1.31221 13 1.31221C19.439 1.31221 24.6878 6.56103 24.6878 13C24.6878 19.439 19.439 24.6878 13 24.6878Z"
+            fill="currentColor" />
+          <path
+            d="M13.9126 12.939L17.7272 9.12441C17.9713 8.88028 17.9713 8.45305 17.7272 8.20892C17.483 7.96479 17.0558 7.96479 16.8117 8.20892L12.9971 12.0235L9.18258 8.20892C8.93844 7.96479 8.51121 7.96479 8.26708 8.20892C8.02295 8.45305 8.02295 8.88028 8.26708 9.12441L12.0816 12.939L8.26708 16.723C8.02295 16.9671 8.02295 17.3944 8.26708 17.6385C8.38915 17.7606 8.57225 17.8216 8.72483 17.8216C8.87741 17.8216 9.06051 17.7606 9.18258 17.6385L12.9971 13.8239L16.8117 17.6385C16.9338 17.7606 17.1168 17.8216 17.2694 17.8216C17.422 17.8216 17.6051 17.7606 17.7272 17.6385C17.9713 17.3944 17.9713 16.9671 17.7272 16.723L13.9126 12.939Z"
+            fill="currentColor" />
+        </svg>
+      </button>
+      <h4 class="modal-title">Перезвонить <span class="fst-italic">вам?</span></h4>
+      <p class="modal-subtitle">
+        Оставьте свой номер
+        и наш специалист свяжется с вами
+      </p>
+      <form id="callRequestForm">
+        <input type="text" class="modal-input" id="client_name" placeholder="Имя">
+        <input type="text" class="modal-input" id="client_phone" placeholder="Телефон">
+        <button type="submit"
+          class="btn btn-primary text-bg-danger text-uppercase d-inline-flex align-items-center justify-content-center gap-2 my-btn-padding-x w-100">
+          отправить
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.999978 1.17849L11.9998 11.8215" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+            <path d="M3.75 11.8214L12 11.8214" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+            <path d="M12 11.8214L12 4.23685" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/navbar-toggle.js"></script>
+  <script src="js/scroll-to-top.js"></script>
+  <script src="js/cards-scroll-x.js"></script>
+  <script src="js/request-a-call.js"></script>
+  <script src="js/modal.js"></script>
+  <script>
+    function closeModal() {
+      modal.classList.add('d-none');
+    }
+  </script>
+</body>
+
+</html>

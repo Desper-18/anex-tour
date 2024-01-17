@@ -1,0 +1,81 @@
+.modal-bg {
+    background: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    inset: 0;
+    z-index: 4;
+}
+
+.modal-window {
+    max-width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 30px;
+    background: #fff;
+
+    /* тень под меню */
+    box-shadow: 0px 4px 20px 0px rgba(43, 43, 51, 0.2);
+    padding: 52px 40px;
+    position: relative;
+    top: 30vh;
+}
+
+.modal-title {
+    color: #1c1c1c;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.modal-subtitle {
+    color: #1c1c1c;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.modal-input {
+    border: 0px;
+    border-bottom: 1px solid #848484;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.modal-input:last-of-type {
+    margin-bottom: 24px;
+}
+
+.modal-input::placeholder {
+    color: #bdbdbd;
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.modal-input:focus-visible {
+    outline: 0;
+}
+
+.modal-close-btn {
+    all: unset;
+    background-color: transparent;
+    border-radius: 100px;
+    padding: 4px;
+    line-height: normal;
+    color: #d4d4d4;
+    position: absolute;
+    top: 18px;
+    right: 18px;
+}
+
+.modal-close-btn:hover {
+    color: var(--bs-primary);
+}
